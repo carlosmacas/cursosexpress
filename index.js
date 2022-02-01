@@ -13,11 +13,11 @@ app.get('/', (req, res) => {
     res.send('Servidor OK !!!');
 })
 
-app.get('/teachers', (req, res) => {
+app.get('/cursos', (req, res) => {
     const db = new Database()
     const cn = db.getConnection()
     cn.execute(
-        'SELECT * FROM profesor', [],
+        'SELECT * FROM curso', [],
         function (err, results, fields) {
             res.json(results)
         }
